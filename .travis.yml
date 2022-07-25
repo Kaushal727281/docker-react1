@@ -1,0 +1,9 @@
+sudo:required
+services:
+  - docker
+
+before_install:
+  - docker build  -t kaushal172728/docker-react1 -f Dockerfile.dev .
+
+script:
+  - docker run kaushal172728/docker-react1 npm run test -- --coverage
